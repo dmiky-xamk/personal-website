@@ -1,118 +1,69 @@
 import styles from "./navigation.module.css";
-import useToggle from "../../../hooks/useToggle";
-import useOutsideClick from "../../../hooks/useOutsideClick";
+import useOutsideClick from "./useOutsideClick";
+import useToggleNav from "./useToggleNav";
+import HamburgerButton from "./hamburger-button";
+import { Link as RouterLink } from "wouter";
 
-type Props = {
-  onMenuToggle?: () => void;
-};
+const NAV_LIST_LINKS = [
+  { href: "#about", text: "About me" },
+  { href: "#projects", text: "Projects" },
+  { href: "#internship", text: "Internship" },
+  { href: "#contact", text: "Contact" },
+];
 
-// TODO: Check accessibility
-export default function Navigation({ onMenuToggle }: Props) {
-  const [isExpanded, toggleIsExpanded] = useToggle(false);
+interface Props {
+  logoOnly?: boolean;
+  tint?: boolean;
+}
 
-  const handleMenuToggle = () => {
-    if (onMenuToggle) {
-      onMenuToggle();
-    }
-    toggleIsExpanded();
-  };
+export default function Navigation({ logoOnly, tint }: Props) {
+  const [isOpen, handleToggleNav, handleCloseNav] = useToggleNav(false);
 
-  const toggleIfExpanded = () => {
-    if (isExpanded) {
-      handleMenuToggle();
-    }
-  };
+  // Close the nav when clicking outside of it
+  const ref = useOutsideClick(() => handleCloseNav());
 
-  const handleLinkClick = () => toggleIfExpanded();
+  const listItems = NAV_LIST_LINKS.map((link) => (
+    <li key={link.href}>
+      <a className={styles.nav__link} href={link.href} onClick={handleCloseNav}>
+        {link.text}
+      </a>
+    </li>
+  ));
 
-  // Close the menu when clicking outside of it
-  const ref = useOutsideClick(() => toggleIfExpanded());
+  if (logoOnly) {
+    return (
+      <nav className={styles.nav} aria-label="navigation">
+        <div className={styles.logo}>
+          <RouterLink className={styles.nav__link} href="/" aria-label="home">
+            MK
+          </RouterLink>
+        </div>
+      </nav>
+    );
+  }
 
   return (
-    <nav ref={ref} className={`${styles.nav}`} role="navigation">
+    <nav
+      ref={ref}
+      className={`${styles.nav} ${tint ? styles.tint : ""}`}
+      aria-label="navigation"
+    >
       <div className={styles.logo}>
-        <a className={styles.nav__link} href="/">
+        <RouterLink className={styles.nav__link} href="/" aria-label="home">
           MK
-        </a>
+        </RouterLink>
       </div>
-      {/*<div ref={ref}>*/}
-      <button
-        className={styles.hamburger}
-        type="button"
-        aria-label="Menu"
-        aria-controls="navigation"
-        aria-expanded={isExpanded}
-        onClick={handleMenuToggle}
-      >
-        <svg width="100%" viewBox="0 0 100 100">
-          <rect
-            className={`${styles.line} ${styles.top}`}
-            x="10"
-            y="25"
-            width="80"
-            height="10"
-            rx="5"
-          />
-          <rect
-            className={`${styles.line} ${styles.mid}`}
-            x="10"
-            y="45"
-            width="80"
-            height="10"
-            rx="5"
-          />
-          <rect
-            className={`${styles.line} ${styles.bot}`}
-            x="10"
-            y="65"
-            width="80"
-            height="10"
-            rx="5"
-          />
-        </svg>
-      </button>
-
+      <HamburgerButton isNavOpen={isOpen} toggleIsNavOpen={handleToggleNav} />
       {/* 
       No need for 'aria-hidden' as this uses CSS 'visibility'.
       https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden
       */}
-      <div
+      <nav
         id="navigation"
-        className={`${styles.aside} ${isExpanded ? styles.open : ""}`}
-        // aria-hidden={!isExpanded}
-        // tabIndex={isExpanded ? 1 : -1}
+        className={`${styles.aside} ${isOpen ? styles.open : ""}`}
       >
-        <ul className={styles.nav__list}>
-          <li>
-            <a
-              className={styles.nav__link}
-              href="/#about"
-              onClick={handleLinkClick}
-            >
-              About me
-            </a>
-          </li>
-          <li>
-            <a
-              className={styles.nav__link}
-              href="/#projects"
-              onClick={handleLinkClick}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              className={styles.nav__link}
-              href="/#contact"
-              onClick={handleLinkClick}
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-      {/*</div>*/}
+        <ul className={styles.nav__list}>{listItems}</ul>
+      </nav>
     </nav>
   );
 }

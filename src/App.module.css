@@ -1,8 +1,10 @@
-#root {
-  max-width: 1280px;
-}
-
-.blur {
+/* Blur everything else but the navigation */
+body.blur > div > :not(nav) {
   filter: blur(2px);
   transition: filter 0.3s ease-in-out;
+}
+
+/* Disable scrolling while blurred */
+body.blur {
+  overflow: hidden;
 }
