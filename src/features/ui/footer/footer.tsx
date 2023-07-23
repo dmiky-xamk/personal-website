@@ -18,7 +18,7 @@ export default function Footer() {
         <li>
           <Link
             customClass={styles.link}
-            href="http://www.linkedin.com/in/mkyllonen"
+            href="http://www.linkedin.com/in/mikaelkyllonen"
             variant="tertiary"
             blank
           >
