@@ -2,6 +2,9 @@ import ProjectPageLayout from "../../features/ui/layout/project-page-layout";
 import Section from "../../features/ui/section/section";
 import styles from "./my-recipes.module.css";
 import wireframe from "../../assets/projects/my-recipes-web/wireframe.jpg";
+import desktopImg from "../../assets/projects/my-recipes-web/header-desktop.jpg";
+import tabletImg from "../../assets/projects/my-recipes-web/header-tablet.jpg";
+import mobileImg from "../../assets/projects/my-recipes-web/header-mobile.jpg";
 
 export default function MyRecipes() {
   return (
@@ -17,9 +20,9 @@ export default function MyRecipes() {
       }}
       image={{
         alt: "Preview of the application's user interface",
-        desktop: "/src/assets/projects/my-recipes-web/header-desktop.jpg",
-        tablet: "/src/assets/projects/my-recipes-web/header-tablet.jpg",
-        mobile: "/src/assets/projects/my-recipes-web/header-mobile.jpg",
+        desktop: desktopImg,
+        tablet: tabletImg,
+        mobile: mobileImg,
       }}
     >
       <Section>

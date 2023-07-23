@@ -1,5 +1,6 @@
 import Link from "../ui/link/link";
 import styles from "./header.module.css";
+import headshot from "../../assets/header/me.png";
 
 export default function Header() {
   return (
@@ -23,11 +24,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        <img
-          className={styles.image}
-          src="/src/assets/header/me.png"
-          alt="Headshot"
-        />
+        <img className={styles.image} src={headshot} alt="Headshot" />
       </div>
     </header>
   );

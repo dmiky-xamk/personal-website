@@ -1,5 +1,7 @@
 import ProjectPageLayout from "../../features/ui/layout/project-page-layout";
 import Section from "../../features/ui/section/section";
+import desktopImg from "../../assets/projects/my-recipes-flutter/header-tablet-desktop.png";
+import mobileImg from "../../assets/projects/my-recipes-flutter/header-mobile.png";
 
 export default function MyRecipes() {
   return (
@@ -14,9 +16,8 @@ export default function MyRecipes() {
       }}
       image={{
         alt: "Preview of the application",
-        desktop:
-          "/src/assets/projects/my-recipes-flutter/header-tablet-desktop.png",
-        mobile: "/src/assets/projects/my-recipes-flutter/header-mobile.png",
+        desktop: desktopImg,
+        mobile: mobileImg,
       }}
       disableShadow
     >
