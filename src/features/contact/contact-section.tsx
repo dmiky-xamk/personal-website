@@ -11,7 +11,7 @@ export default function ContactSection() {
         contribute to your team and make a positive impact. Let's collaborate
         and create something great together!
       </p>
-      <Link variant="primary" href="mailto:mikael.kyllonen97@gmail.com">
+      <Link variant="primary" href="mailto:mikael@mikaelkyllonen.com">
         Send me an email
       </Link>
     </Section>
