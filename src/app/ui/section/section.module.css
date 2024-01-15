@@ -1,0 +1,22 @@
+.section {
+  padding: 3.2rem 0;
+  line-height: 1.5;
+}
+
+.section h2 {
+  font-size: 3.2rem;
+  margin-bottom: 3.2rem;
+  color: var(--color-darkest);
+  font-weight: var(--font-weight-semibold);
+}
+
+.section p {
+  margin-bottom: 2.4rem;
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 632px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
