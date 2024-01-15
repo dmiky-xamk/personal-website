@@ -2,6 +2,12 @@ import ProjectPageLayout from "../project-page-layout";
 import desktopImg from "@/../public/images/projects/my-recipes-flutter/header-tablet-desktop.png";
 import mobileImg from "@/../public/images/projects/my-recipes-flutter/header-mobile.png";
 import Section from "@/app/ui/section/section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "My Recipes Flutter - Full-stack mobile application for managing recipes",
+};
 
 export default function Page() {
   return (

@@ -6,6 +6,11 @@ import mobileImg from "@/../public/images/projects/my-recipes-web/header-mobile.
 import ProjectPageLayout from "../project-page-layout";
 import Section from "@/app/ui/section/section";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Recipes - Full-stack web application for managing recipes",
+};
 
 export default function Page() {
   return (

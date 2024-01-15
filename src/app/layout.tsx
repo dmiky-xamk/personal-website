@@ -8,7 +8,10 @@ import Footer from "./ui/footer/footer";
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mikael Kyllönen",
+  title: {
+    default: "Mikael Kyllönen",
+    template: "%s | Mikael Kyllönen",
+  },
   description:
     "Full Stack Developer with a passion for solving challenges and delivering high-quality, scalable applications.",
 };
