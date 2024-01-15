@@ -1,0 +1,53 @@
+.header {
+  padding: 3.2rem 0;
+}
+
+.subheading {
+  display: block;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.heading {
+  font-weight: var(--font-weight-semibold);
+  font-size: 4rem;
+  color: var(--color-darkest);
+  margin-bottom: 4rem;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3.2rem 0;
+}
+
+.info ul::before {
+  content: attr(aria-label);
+  font-size: 2rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 0.8rem;
+}
+
+.info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.article p {
+  line-height: 1.5;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shadow {
+  box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
+}
