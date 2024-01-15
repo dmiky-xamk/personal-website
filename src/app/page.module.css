@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -107,6 +107,18 @@
 .logo {
   position: relative;
 }
+
+/* Blur everything else but the navigation */
+body.blur > :not(nav) {
+  filter: blur(2px);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Disable scrolling while blurred */
+body.blur {
+  overflow: hidden;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
