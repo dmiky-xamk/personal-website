@@ -26,9 +26,13 @@ export default function Navigation({ logoOnly, tint }: Props) {
 
   const listItems = NAV_LIST_LINKS.map((link) => (
     <li key={link.href}>
-      <a className={styles.nav__link} href={link.href} onClick={handleCloseNav}>
+      <Link
+        className={styles.nav__link}
+        href={link.href}
+        onClick={handleCloseNav}
+      >
         {link.text}
-      </a>
+      </Link>
     </li>
   ));
 

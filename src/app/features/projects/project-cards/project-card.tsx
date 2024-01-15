@@ -9,7 +9,7 @@ interface Props {
   href: string;
   title: string;
   image: StaticImageData;
-  github?: string;
+  github: string;
 }
 
 export default function ProjectCard({
@@ -29,7 +29,7 @@ export default function ProjectCard({
       <div className={styles.content}>
         <div className={styles.heading}>
           <h3>{title}</h3>
-          <a
+          <Link
             className={styles.icon}
             href={github}
             target="_blank"
@@ -37,7 +37,7 @@ export default function ProjectCard({
             aria-label="Project's GitHub page"
           >
             <FaGithub size="24" aria-hidden="true" />
-          </a>
+          </Link>
         </div>
         <p className={styles.description}>{description}</p>
       </div>

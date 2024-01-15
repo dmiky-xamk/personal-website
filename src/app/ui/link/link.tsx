@@ -15,7 +15,6 @@ export default function Link({
   href,
   customClass,
   blank,
-  routerLink,
   children,
 }: Props) {
   const linkStyles =
@@ -27,17 +26,13 @@ export default function Link({
 
   const blankAttributes = { target: "_blank", rel: "noopener, noreferrer" };
 
-  return routerLink ? (
-    <NextLink href={href} className={`${linkStyles} ${customClass ?? ""}`}>
-      {children}
-    </NextLink>
-  ) : (
-    <a
+  return (
+    <NextLink
       href={href}
       className={`${linkStyles} ${customClass ?? ""}`}
       {...(blank && blankAttributes)}
     >
       {children}
-    </a>
+    </NextLink>
   );
 }
