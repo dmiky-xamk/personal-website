@@ -1,0 +1,4 @@
+.heading {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 4rem;
+}
