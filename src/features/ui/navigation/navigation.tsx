@@ -7,7 +7,6 @@ import { Link as RouterLink } from "wouter";
 const NAV_LIST_LINKS = [
   { href: "#about", text: "About me" },
   { href: "#projects", text: "Projects" },
-  { href: "#internship", text: "Internship" },
   { href: "#contact", text: "Contact" },
 ];
 

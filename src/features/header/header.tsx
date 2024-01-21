@@ -12,12 +12,13 @@ export default function Header() {
           </h1>
           <p>I'm studying software development at XAMK.</p>
           <p>
-            My interests are in web & mobile full-stack development along with
-            cloud solutions.
+            I'm studying software development at XAMK. My interests are in
+            full-stack development for web and mobile platforms in addition to
+            leveraging Microsoft Azure.
           </p>
           <div className={styles.actions}>
-            <Link variant="primary" href="#internship">
-              Internship
+            <Link variant="primary" href="#contact">
+              Contact
             </Link>
             <Link variant="secondary" href="#about">
               About me

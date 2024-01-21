@@ -1,7 +1,6 @@
 import AboutSection from "../features/about/about-section";
 import ContactSection from "../features/contact/contact-section";
 import Header from "../features/header/header";
-import InternshipSection from "../features/internship/internship-section";
 import ProjectsSection from "../features/projects/projects-section";
 import Footer from "../features/ui/footer/footer";
 import Link from "../features/ui/link/link";
@@ -20,7 +19,6 @@ export default function HomePage() {
       <Main>
         <AboutSection />
         <ProjectsSection />
-        <InternshipSection />
         <ContactSection />
       </Main>
       <Footer />
