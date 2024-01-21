@@ -1,3 +1,3 @@
-# From React to Next.js
+# Personal website
 
-This branch is the Next.js version of the website.
+My personal website made with Next.js.
